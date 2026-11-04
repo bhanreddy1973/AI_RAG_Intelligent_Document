@@ -25,6 +25,7 @@ pytest tests/test_chunker.py -v
 pytest tests/test_embeddings.py -v
 pytest tests/test_vectorstore.py -v
 pytest tests/test_rag.py -v
+pytest tests/test_api.py -v
 ```
 
 | Command | What it checks |
@@ -43,6 +44,7 @@ pytest tests/test_rag.py -v
 | `pytest tests/test_embeddings.py -v` | `app/embeddings.py` — vectors (model mocked) |
 | `pytest tests/test_vectorstore.py -v` | `app/vectorstore.py` — FAISS add/search/filter |
 | `pytest tests/test_rag.py -v` | `app/rag.py` — grounded answer and not-found |
+| `pytest tests/test_api.py -v` | `app/main.py` — five endpoints, errors, duplicate upload |
 
 ## All current tests
 
