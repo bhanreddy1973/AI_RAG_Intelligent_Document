@@ -15,6 +15,8 @@ pytest tests/test_config.py -v
 pytest tests/test_schemas.py -v
 pytest tests/test_parser.py -v
 pytest tests/test_parser_data.py -v
+pytest tests/test_storage.py -v
+pytest tests/test_nvidia_client.py -v
 ```
 
 | Command | What it checks |
@@ -23,6 +25,8 @@ pytest tests/test_parser_data.py -v
 | `pytest tests/test_schemas.py -v` | `app/schemas.py` — document types, Other, Ask/Search shapes |
 | `pytest tests/test_parser.py -v` | `app/parser.py` — PDF/TXT pages, empty files, bad types |
 | `pytest tests/test_parser_data.py -v` | `app/parser.py` on PDFs in `Data/` |
+| `pytest tests/test_storage.py -v` | `app/storage.py` — save, hash, duplicates |
+| `pytest tests/test_nvidia_client.py -v` | `app/nvidia_client.py` — key check, retry (mocked) |
 
 ## All current tests
 

@@ -25,10 +25,10 @@ class Settings(BaseSettings):
     pages_per_batch: int = 3
     max_parallel: int = 3
 
-    sqlite_path: str = "data/app.db"
-    upload_dir: str = "data/uploads"
-    faiss_index_path: str = "data/faiss.index"
-    faiss_meta_path: str = "data/faiss_meta.json"
+    sqlite_path: str = "Data/app.db"
+    upload_dir: str = "Data/uploads"
+    faiss_index_path: str = "Data/faiss.index"
+    faiss_meta_path: str = "Data/faiss_meta.json"
 
     log_level: str = "INFO"
 

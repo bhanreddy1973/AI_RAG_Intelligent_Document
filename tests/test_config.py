@@ -17,8 +17,8 @@ def test_model_names_are_set():
 
 
 def test_resolve_joins_project_root():
-    resolved = settings.resolve("data/app.db")
-    assert resolved == ROOT_DIR / "data" / "app.db"
+    resolved = settings.resolve("Data/app.db")
+    assert resolved == ROOT_DIR / "Data" / "app.db"
     assert resolved.is_absolute()
 
 
@@ -30,4 +30,6 @@ def test_resolve_keeps_absolute_path():
 def test_settings_can_be_created_from_env_file():
     loaded = Settings()
     assert loaded.sqlite_path.endswith("app.db")
+    assert loaded.sqlite_path.startswith("Data/")
     assert loaded.upload_dir.endswith("uploads")
+    assert loaded.upload_dir.startswith("Data/")
