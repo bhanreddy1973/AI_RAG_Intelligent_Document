@@ -20,6 +20,9 @@ pytest tests/test_nvidia_client.py -v
 pytest tests/test_summarizer.py -v
 pytest tests/test_classifier.py -v
 pytest tests/test_extractor.py -v
+pytest tests/test_database.py -v
+pytest tests/test_chunker.py -v
+pytest tests/test_embeddings.py -v
 ```
 
 | Command | What it checks |
@@ -33,6 +36,9 @@ pytest tests/test_extractor.py -v
 | `pytest tests/test_summarizer.py -v` | `app/summarizer.py` — page batches and metadata |
 | `pytest tests/test_classifier.py -v` | `app/classifier.py` — four types plus Other |
 | `pytest tests/test_extractor.py -v` | `app/extractor.py` — schema fields, pages, missing/other |
+| `pytest tests/test_database.py -v` | `app/database.py` — save, get, hash lookup, list |
+| `pytest tests/test_chunker.py -v` | `app/chunker.py` — size, overlap, page numbers |
+| `pytest tests/test_embeddings.py -v` | `app/embeddings.py` — vectors (model mocked) |
 
 ## All current tests
 
