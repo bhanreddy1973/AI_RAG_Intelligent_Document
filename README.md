@@ -530,7 +530,7 @@ Knobs live in `.env` (see `.env.example`):
 
 ## Tests
 
-Reviewer guide (manual + automated, sample paths under `TEST_DATA/` and `Data/`): **[TESTING.md](TESTING.md)**
+ Guide (manual + automated, sample paths under `TEST_DATA/` and `Data/`): **[TESTING.md](TESTING.md)**
 
 ```powershell
 pytest tests -v
