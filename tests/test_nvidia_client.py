@@ -2,7 +2,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from app.nvidia_client import LLMError, chat
+from app.nvidia_client import LLMError, chat, parse_json
 
 
 def test_missing_api_key(monkeypatch):
@@ -52,3 +52,13 @@ def test_chat_raises_after_retries(mock_openai, mock_sleep, monkeypatch):
         chat([{"role": "user", "content": "hi"}], retries=1)
 
     assert mock_openai.return_value.chat.completions.create.call_count == 2
+
+
+def test_parse_json_strips_markdown():
+    data = parse_json('```json\n{"summary": "ok"}\n```')
+    assert data == {"summary": "ok"}
+
+
+def test_parse_json_rejects_plain_text():
+    with pytest.raises(LLMError, match="did not return JSON"):
+        parse_json("the notice period is 60 days")

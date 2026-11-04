@@ -17,6 +17,9 @@ pytest tests/test_parser.py -v
 pytest tests/test_parser_data.py -v
 pytest tests/test_storage.py -v
 pytest tests/test_nvidia_client.py -v
+pytest tests/test_summarizer.py -v
+pytest tests/test_classifier.py -v
+pytest tests/test_extractor.py -v
 ```
 
 | Command | What it checks |
@@ -26,7 +29,10 @@ pytest tests/test_nvidia_client.py -v
 | `pytest tests/test_parser.py -v` | `app/parser.py` — PDF/TXT pages, empty files, bad types |
 | `pytest tests/test_parser_data.py -v` | `app/parser.py` on PDFs in `Data/` |
 | `pytest tests/test_storage.py -v` | `app/storage.py` — save, hash, duplicates |
-| `pytest tests/test_nvidia_client.py -v` | `app/nvidia_client.py` — key check, retry (mocked) |
+| `pytest tests/test_nvidia_client.py -v` | `app/nvidia_client.py` — key check, retry, JSON parse |
+| `pytest tests/test_summarizer.py -v` | `app/summarizer.py` — page batches and metadata |
+| `pytest tests/test_classifier.py -v` | `app/classifier.py` — four types plus Other |
+| `pytest tests/test_extractor.py -v` | `app/extractor.py` — schema fields, pages, missing/other |
 
 ## All current tests
 
