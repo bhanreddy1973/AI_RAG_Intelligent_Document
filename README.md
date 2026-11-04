@@ -19,6 +19,8 @@ Document types:
 - Project Proposal
 - Other (if it does not match the types above)
 
+
+
 ## Stack
 
 - API: FastAPI
@@ -27,6 +29,8 @@ Document types:
 - PDF: PyMuPDF
 - DB: SQLite
 - Vectors: FAISS
+
+
 
 ## Run locally
 
@@ -45,23 +49,27 @@ Then:
 uvicorn app.main:app --reload
 ```
 
-Swagger: http://127.0.0.1:8000/docs
+Swagger: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ## Endpoints
 
-| Method | Path | Purpose |
-|---|---|---|
+
+| Method | Path                | Purpose                               |
+| ------ | ------------------- | ------------------------------------- |
 | `POST` | `/documents/upload` | Save, parse, classify, extract, embed |
-| `GET` | `/documents` | List uploaded documents |
-| `GET` | `/documents/{id}` | Full metadata + extracted JSON |
-| `POST` | `/search` | Semantic chunk search (no LLM) |
-| `POST` | `/ask` | Grounded Q&A from retrieved chunks |
+| `GET`  | `/documents`        | List uploaded documents               |
+| `GET`  | `/documents/{id}`   | Full metadata + extracted JSON        |
+| `POST` | `/search`           | Semantic chunk search (no LLM)        |
+| `POST` | `/ask`              | Grounded Q&A from retrieved chunks    |
+
 
 Errors:
 
 - empty / unsupported files → **400** (`StorageError` / `ParseError`)
 - NVIDIA / LLM failures → **502** (`LLMError`)
 - unknown document id → **404**
+
+
 
 ## End-to-end flow
 
@@ -91,6 +99,10 @@ flowchart TD
     U -->|yes| W["LLM answers from chunks only"]
     W --> X["AskResponse + source + page"]
 ```
+
+
+
+
 
 ### Worked example: upload
 
@@ -122,6 +134,8 @@ Example summary JSON produced in step 4:
   "entities": ["ABC Technologies", "John Doe"]
 }
 ```
+
+
 
 ## Two stores, two jobs
 
@@ -168,6 +182,10 @@ erDiagram
     }
 ```
 
+
+
+
+
 ## API record schema
 
 Every successful upload and `GET /documents/{id}` returns this shape:
@@ -211,6 +229,8 @@ Every successful upload and `GET /documents/{id}` returns this shape:
 ]
 ```
 
+
+
 ## Extraction schemas
 
 Every typed field is an `ExtractedField`:
@@ -240,17 +260,23 @@ flowchart LR
     OT --> EF
 ```
 
+
+
+
+
 ### Employment Agreement
 
-| Field | Kind | Example |
-|---|---|---|
-| `company_name` | text | ABC Technologies |
-| `employee_name` | text | John Doe |
-| `job_title` | text | Software Engineer |
-| `effective_date` | text | 1 April 2024 |
-| `salary` | text | 1200000 INR per annum |
-| `notice_period` | text | 60 days |
-| `key_clauses` | list | Confidentiality, Termination |
+
+| Field            | Kind | Example                      |
+| ---------------- | ---- | ---------------------------- |
+| `company_name`   | text | ABC Technologies             |
+| `employee_name`  | text | John Doe                     |
+| `job_title`      | text | Software Engineer            |
+| `effective_date` | text | 1 April 2024                 |
+| `salary`         | text | 1200000 INR per annum        |
+| `notice_period`  | text | 60 days                      |
+| `key_clauses`    | list | Confidentiality, Termination |
+
 
 ```json
 {
@@ -290,6 +316,8 @@ flowchart LR
 }
 ```
 
+
+
 ### Product Documentation
 
 `product_name`, `product_version`, `description`, `features`, `technical_requirements`, `installation_steps`, `api_endpoints` (last four are lists)
@@ -308,6 +336,8 @@ flowchart LR
   "missing_fields": []
 }
 ```
+
+
 
 ### Project Proposal
 
@@ -330,6 +360,8 @@ flowchart LR
 }
 ```
 
+
+
 ### Other
 
 Used when the file is not one of the four types (invoice, letter, mixed notes, and so on). Only a small common set is required; the rest goes in `other_fields`.
@@ -348,6 +380,8 @@ Used when the file is not one of the four types (invoice, letter, mixed notes, a
   "missing_fields": ["effective_date", "key_clauses"]
 }
 ```
+
+
 
 ## Search and ask
 
@@ -429,6 +463,8 @@ flowchart LR
     rag --> schemas
 ```
 
+
+
 Config, document types, extraction schemas, SQLite, FAISS, and the five API endpoints all use the same field names and the same `{value, page}` shape.
 
 Known design notes (not schema mismatches):
@@ -437,94 +473,60 @@ Known design notes (not schema mismatches):
 - SQLite keeps `file_path`, but the API `FileMetadata` does not return it.
 - Duplicate detection uses the DB hash. If SQLite has the file but FAISS was wiped, a re-upload is skipped and search will miss it.
 
+
+
 ## Assignment coverage
 
 Checked against the brief (required items vs optional bonuses):
 
-| Requirement | Status |
-|---|---|
-| PDF / TXT upload + text extraction | Done (`parser`, `storage`) |
-| Meaningful chunking + metadata (id, name, page, chunk id, timestamp) | Done (recursive chunker + SQLite) |
-| LLM structured JSON extraction with schema | Done (typed schemas per document type) |
-| Missing fields + malformed LLM JSON handling | Done (`null` / `[]`, `missing_fields`, `chat_json` retry) |
-| Avoid inventing facts not in the file | Done (prompts + refusal path; not perfect) |
-| Embeddings + vector store + RAG answers with sources | Done (BGE + FAISS + `/ask`) |
-| Five REST endpoints | Done |
-| Invalid/empty files, LLM failures, no-hit queries, logging | Done |
-| README, architecture diagram, sample data, Swagger, ≥5 tests | Done |
-| Dedicated “compare two documents” endpoint | Not built — `/ask` can only approximate if both docs are retrieved |
-| Bonus: hybrid search / reranking / background jobs / eval harness / agent | Not implemented (optional) |
-| Bonus: document-level filtering | Partially done (`document_id` / `document_type` on `/search` and `/ask`) |
+
+| Requirement                                                               | Status                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| PDF / TXT upload + text extraction                                        | Done (`parser`, `storage`)                                               |
+| Meaningful chunking + metadata (id, name, page, chunk id, timestamp)      | Done (recursive chunker + SQLite)                                        |
+| LLM structured JSON extraction with schema                                | Done (typed schemas per document type)                                   |
+| Missing fields + malformed LLM JSON handling                              | Done (`null` / `[]`, `missing_fields`, `chat_json` retry)                |
+| Avoid inventing facts not in the file                                     | Done (prompts + refusal path; not perfect)                               |
+| Embeddings + vector store + RAG answers with sources                      | Done (BGE + FAISS + `/ask`)                                              |
+| Five REST endpoints                                                       | Done                                                                     |
+| Invalid/empty files, LLM failures, no-hit queries, logging                | Done                                                                     |
+| README, architecture diagram, sample data, Swagger, ≥5 tests              | Done                                                                     |
+| Dedicated “compare two documents” endpoint                                | Not built — `/ask` can only approximate if both docs are retrieved       |
+| Bonus: hybrid search / reranking / background jobs / eval harness / agent | Not implemented (optional)                                               |
+| Bonus: document-level filtering                                           | Partially done (`document_id` / `document_type` on `/search` and `/ask`) |
+
 
 Sample files live under `TEST_DATA/` (TXT) and `Data/` (PDFs). Manual + automated walkthrough: [TESTING.md](TESTING.md).
 
 External services: LLM calls go through NVIDIA NIM by default (API key required). OpenAI and Gemini are optional via `LLM_PROVIDER`. Embeddings run locally — no paid embedding API.
 
-## Design decisions
-
-These are the short write-ups asked for in the deliverables.
-
-### Why I chose this embedding model
-
-I went with `BAAI/bge-base-en-v1.5` because it is built for retrieval, not just generic sentence similarity, and it runs locally through `sentence-transformers`. For a 5–6 hour assignment that mattered: no second API bill, works offline after the first download, and the quality is good enough for English policy / agreement text.
-
-I also normalize the vectors, so FAISS inner-product search behaves like cosine similarity. Before embedding, each chunk is prefixed with the file name, type, title, and a short summary. That is a small trick so a query like “notice period in the employment agreement” is more likely to land on the right file when several uploads share similar wording.
-
-### How chunking works
-
-Chunking is page-aware and recursive. Each PDF page (or the whole TXT as page 1) is split on its own so page citations stay honest.
-
-Instead of cutting every 1000 characters blindly, the splitter tries natural breaks first: paragraphs (`\n\n`), then lines, then sentences, then words, and only then raw characters if nothing else fits. Pieces are packed up to `CHUNK_SIZE` (1000). Neighbouring chunks overlap by `CHUNK_OVERLAP` (150), except across paragraph boundaries, so a clause sitting on a boundary still shows up in both places.
-
-Each chunk keeps `document_id`, `chunk_id`, `page_number`, and the raw text. That metadata is what `/search` and `/ask` use when they return sources.
-
-### How retrieval relevance is determined
-
-The query is embedded with the same BGE model. FAISS returns the nearest chunks by cosine similarity. You can optionally narrow results to one `document_id` or an exact `document_type`.
-
-`/search` just returns those hits with scores. `/ask` is stricter: if there are no hits, or the best score is below `MIN_SCORE` (0.35), it refuses to answer. Only when retrieval looks strong enough do we send the top chunks to the LLM and ask it to answer from that context alone. A successful answer always comes back with source file, page, chunk id, and supporting text.
-
-### How hallucinations are handled
-
-I treated this as layered defence rather than trusting a single prompt.
-
-On extraction, the model is told to pull only what is written, leave missing text as null / empty lists, and put unexpected facts in `other_fields`. The result has to pass a Pydantic schema; bad JSON is retried once and then fails cleanly.
-
-On Q&A, weak retrieval never reaches the LLM. When it does, the prompt says “answer only from the context” and to admit when the answer is not there. If the model still hedges into the not-found phrase, the API returns that message with no fake source.
-
-This reduces unsupported answers; it does not make them impossible. A fluent model can still paraphrase a weakly related chunk. That is why source text is always returned for successful answers — so a reviewer can check the claim.
-
-### What limitations exist
-
-Recursive character splitting is better than fixed windows, but it is still not true semantic chunking. Headings and tables are not specially detected. TXT files have no real pages, so page is always 1.
-
-There is no keyword / hybrid search and no reranker, so exact IDs or rare terms can be missed. Uploads are processed inline, so large PDFs feel slow. Duplicate detection is hash-based: if you delete FAISS but keep SQLite, a re-upload is skipped and search can miss that file.
-
-“Summarise the differences between two documents” is only possible in a weak sense through `/ask` if both documents are retrieved — there is no dedicated compare API. LLM quality and latency also depend on whichever provider key you configure.
-
 ## Config
 
 Knobs live in `.env` (see `.env.example`):
 
-| Variable | Default | Role |
-|---|---|---|
-| `LLM_PROVIDER` | `nvidia` | `nvidia`, `openai`, or `gemini` |
-| `NVIDIA_API_KEY` | empty | Required when provider is nvidia |
-| `NVIDIA_BASE_URL` | `https://integrate.api.nvidia.com/v1` | NVIDIA NIM endpoint |
-| `NVIDIA_LLM_MODEL` | `nvidia/nemotron-3-ultra-550b-a55b` | Chat model on NIM |
-| `OPENAI_API_KEY` / `GEMINI_API_KEY` | empty | Used when those providers are selected |
-| `EMBEDDING_MODEL` | `BAAI/bge-base-en-v1.5` | Local sentence-transformers model |
-| `CHUNK_SIZE` | `1000` | Characters per chunk |
-| `CHUNK_OVERLAP` | `150` | Overlap between chunks |
-| `TOP_K` | `5` | Search hits returned |
-| `MIN_SCORE` | `0.35` | Ask refuses answers below this similarity |
-| `PAGES_PER_BATCH` | `3` | Summarizer batch size |
-| `MAX_PARALLEL` | `3` | Parallel summary workers |
-| `SQLITE_PATH` | `Data/app.db` | Metadata database |
-| `UPLOAD_DIR` | `Data/uploads` | Saved PDF/TXT files |
-| `FAISS_INDEX_PATH` | `Data/faiss.index` | Vector index |
-| `FAISS_META_PATH` | `Data/faiss_meta.json` | Chunk metadata next to FAISS |
-| `LOG_LEVEL` | `INFO` | Logging |
+
+| Variable                            | Default                               | Role                                      |
+| ----------------------------------- | ------------------------------------- | ----------------------------------------- |
+| `LLM_PROVIDER`                      | `nvidia`                              | `nvidia`, `openai`, or `gemini`           |
+| `NVIDIA_API_KEY`                    | empty                                 | Required when provider is nvidia          |
+| `NVIDIA_BASE_URL`                   | `https://integrate.api.nvidia.com/v1` | NVIDIA NIM endpoint                       |
+| `NVIDIA_LLM_MODEL`                  | `nvidia/nemotron-3-ultra-550b-a55b`   | Chat model on NIM                         |
+| `OPENAI_API_KEY` / `GEMINI_API_KEY` | empty                                 | Used when those providers are selected    |
+| `EMBEDDING_MODEL`                   | `BAAI/bge-base-en-v1.5`               | Local sentence-transformers model         |
+| `CHUNK_SIZE`                        | `1000`                                | Characters per chunk                      |
+| `CHUNK_OVERLAP`                     | `150`                                 | Overlap between chunks                    |
+| `TOP_K`                             | `5`                                   | Search hits returned                      |
+| `MIN_SCORE`                         | `0.35`                                | Ask refuses answers below this similarity |
+| `PAGES_PER_BATCH`                   | `3`                                   | Summarizer batch size                     |
+| `MAX_PARALLEL`                      | `3`                                   | Parallel summary workers                  |
+| `SQLITE_PATH`                       | `Data/app.db`                         | Metadata database                         |
+| `UPLOAD_DIR`                        | `Data/uploads`                        | Saved PDF/TXT files                       |
+| `FAISS_INDEX_PATH`                  | `Data/faiss.index`                    | Vector index                              |
+| `FAISS_META_PATH`                   | `Data/faiss_meta.json`                | Chunk metadata next to FAISS              |
+| `LOG_LEVEL`                         | `INFO`                                | Logging                                   |
+
+
+
 
 ## Tests
 

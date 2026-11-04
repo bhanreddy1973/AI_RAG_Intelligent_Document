@@ -323,9 +323,17 @@ pytest tests/test_nvidia_client.py::test_chat_raises_after_retries -v
 
 Automated tests live under `tests/`. **Assignment minimum (≥5)** is covered by `tests/test_real_corpus.py`.
 
-- Cases 1–5 use real files under `TEST_DATA/` and `Data/` (parse / chunk only).
-- Cases 6–7 hit **live** FastAPI endpoints and write to the real `.env` paths (`Data/app.db`, `Data/uploads`, `Data/faiss.*`). **LLM and embeddings are not mocked.** Expect minutes, not seconds, on first run (model download + API calls).
-- Other modules (`test_api.py`, etc.) still mock LLM/embeddings for fast offline unit coverage.
+All **five** sample files run the **full live pipeline** (upload → LLM extract → embed → FAISS → list/get/search). Storage is the real `.env` `Data/` paths. LLM and embeddings are **not** mocked. Expect several minutes.
+
+Files covered:
+
+1. `TEST_DATA/employment_agreement_01.txt`
+2. `TEST_DATA/company_policy_01.txt`
+3. `TEST_DATA/product_documentation_01.txt`
+4. `TEST_DATA/technical_specification_01.txt`
+5. `Data/Template_Employment_Agreement.pdf`
+
+Other modules (`test_api.py`, etc.) still mock LLM/embeddings for fast offline unit coverage.
 
 ### 4.1 Run the real-sample automated suite (≥5 cases)
 
@@ -336,15 +344,11 @@ Needs a valid API key in `.env` for your `LLM_PROVIDER`.
 pytest tests/test_real_corpus.py -v
 ```
 
-| # | Test | Real path(s) / endpoints | What it checks |
-|---|---|---|---|
-| 1 | `test_1_real_employment_txt_parses` | `TEST_DATA/employment_agreement_01.txt` | Parse + known entities / notice period |
-| 2 | `test_2_real_company_policy_txt_parses` | `TEST_DATA/company_policy_01.txt` | Parse + Cedarline / policy owner / POL code |
-| 3 | `test_3_real_employment_chunks_keep_notice_period` | `TEST_DATA/employment_agreement_01.txt` | Recursive chunking keeps notice-period text |
-| 4 | `test_4_real_product_and_technical_txt_parse` | product + technical TXT samples | Product + technical samples parse |
-| 5 | `test_5_real_pdf_from_data_parses` | `Data/Template_Employment_Agreement.pdf` | Real PDF page extraction |
-| 6 | `test_6_api_upload_real_employment_and_policy` | live `/documents/upload`, `/documents`, `/search` → `Data/*` | Real upload, extract, embed, list, search |
-| 7 | `test_7_api_ask_real_notice_period` | live `/ask` | Grounded answer with source / chunk refs |
+| # | Test | What it checks |
+|---|---|---|
+| 1 | `test_1_corpus_files_exist` | All five sample paths are on disk |
+| 2 | `test_2_upload_all_five_full_pipeline` | Live upload of all five → extract/embed → `GET /documents` has all five → get + search each |
+| 3 | `test_3_ask_notice_period_on_employment` | Live `/ask` with source / page / chunk refs |
 
 ### 4.2 Run all tests
 

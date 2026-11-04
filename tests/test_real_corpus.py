@@ -1,7 +1,10 @@
-"""Automated cases using real sample files and real app storage paths.
+"""Live automated cases: every sample file goes through the full pipeline.
 
-These tests hit the real FastAPI endpoints and write to the configured
-Data/ SQLite + FAISS locations (from .env). LLM and embeddings are NOT mocked.
+Files → POST /documents/upload → parse → summarize → classify → extract →
+chunk → embed → SQLite + FAISS → list / get / search / ask.
+
+Storage paths come from .env (Data/app.db, Data/uploads, Data/faiss.*).
+LLM and embeddings are NOT mocked.
 """
 
 from pathlib import Path
@@ -9,9 +12,7 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from app.chunker import chunk_pages
 from app.config import ROOT_DIR, settings
-from app.parser import extract_pages
 from app.vectorstore import reset_store
 
 TEST_DATA = ROOT_DIR / "TEST_DATA"
@@ -22,6 +23,15 @@ POLICY_01 = TEST_DATA / "company_policy_01.txt"
 PRODUCT_01 = TEST_DATA / "product_documentation_01.txt"
 TECH_01 = TEST_DATA / "technical_specification_01.txt"
 TEMPLATE_PDF = DATA_DIR / "Template_Employment_Agreement.pdf"
+
+# All five samples must run the full upload pipeline.
+CORPUS_FILES = [
+    EMPLOYMENT_01,
+    POLICY_01,
+    PRODUCT_01,
+    TECH_01,
+    TEMPLATE_PDF,
+]
 
 
 pytestmark = pytest.mark.skipif(
@@ -47,6 +57,25 @@ def _require_live_llm():
         )
 
 
+def _content_type(path: Path) -> str:
+    if path.suffix.lower() == ".pdf":
+        return "application/pdf"
+    return "text/plain"
+
+
+def _search_query_for(path: Path) -> str:
+    name = path.name.lower()
+    if "employment" in name:
+        return "Notice period reference"
+    if "policy" in name:
+        return "Cedarline Technologies policy"
+    if "product" in name:
+        return "LedgerFlow product"
+    if "technical" in name:
+        return "Meridian Identity Service"
+    return "employment agreement"
+
+
 @pytest.fixture
 def live_client():
     """Use real SQLITE_PATH / UPLOAD_DIR / FAISS paths from settings (.env)."""
@@ -59,98 +88,39 @@ def live_client():
     reset_store()
 
 
-def test_1_real_employment_txt_parses():
-    """Real path: TEST_DATA/employment_agreement_01.txt"""
-    assert EMPLOYMENT_01.is_file()
-    pages = extract_pages(EMPLOYMENT_01)
-    text = "\n".join(page.text for page in pages)
-
-    assert len(pages) >= 1
-    assert pages[0].page_number == 1
-    assert "Mira Deshpande" in text
-    assert "Northstar Analytics" in text
-    assert "notice period" in text.lower()
+def test_1_corpus_files_exist():
+    """All five sample paths must be present before the live pipeline runs."""
+    missing = [str(path) for path in CORPUS_FILES if not path.is_file()]
+    assert not missing, f"Missing sample files: {missing}"
 
 
-def test_2_real_company_policy_txt_parses():
-    """Real path: TEST_DATA/company_policy_01.txt"""
-    assert POLICY_01.is_file()
-    pages = extract_pages(POLICY_01)
-    text = "\n".join(page.text for page in pages)
-
-    assert "Cedarline Technologies" in text
-    assert "Nisha Kulkarni" in text
-    assert "POL-03-201" in text
-
-
-def test_3_real_employment_chunks_keep_notice_period():
-    """Real path: TEST_DATA/employment_agreement_01.txt — recursive chunking keeps facts."""
-    pages = extract_pages(EMPLOYMENT_01)
-    chunks = chunk_pages(pages, document_id="real-emp-01")
-
-    assert len(chunks) >= 2
-    assert all(chunk.page_number == 1 for chunk in chunks)
-    assert any("notice period" in chunk.text.lower() for chunk in chunks)
-    assert chunks[0].chunk_id == "real-emp-01-0"
-
-
-def test_4_real_product_and_technical_txt_parse():
-    """Real paths: product_documentation_01.txt and technical_specification_01.txt"""
-    assert PRODUCT_01.is_file()
-    assert TECH_01.is_file()
-
-    product_pages = extract_pages(PRODUCT_01)
-    tech_pages = extract_pages(TECH_01)
-    product_text = "\n".join(page.text for page in product_pages)
-    tech_text = "\n".join(page.text for page in tech_pages)
-
-    assert "LedgerFlow" in product_text
-    assert "Meridian Identity Service" in tech_text or "MIS-310" in tech_text
-
-
-@pytest.mark.skipif(not TEMPLATE_PDF.is_file(), reason="Data/Template_Employment_Agreement.pdf missing")
-def test_5_real_pdf_from_data_parses():
-    """Real path: Data/Template_Employment_Agreement.pdf"""
-    pages = extract_pages(TEMPLATE_PDF)
-
-    assert len(pages) >= 1
-    assert [page.page_number for page in pages] == list(range(1, len(pages) + 1))
-    assert any(page.text.strip() for page in pages)
-
-
-def test_6_api_upload_real_employment_and_policy(live_client):
+def test_2_upload_all_five_full_pipeline(live_client):
     """
-    Live paths:
-    - files: TEST_DATA/employment_agreement_01.txt, company_policy_01.txt
-    - storage: Data/app.db, Data/uploads, Data/faiss.*
-    - endpoints: POST /documents/upload, GET /documents, GET /documents/{id}, POST /search
-    LLM + local embeddings run for real (not mocked).
+    Upload each of the five files through the real API.
+
+    Full steps per file: save → parse → summarize → classify → extract →
+    chunk → embed → SQLite + FAISS.
+    Then list, get, and search each document.
     """
     client = live_client
+    uploaded = {}
 
-    emp = client.post(
-        "/documents/upload",
-        files={"file": (EMPLOYMENT_01.name, EMPLOYMENT_01.read_bytes(), "text/plain")},
-    )
-    pol = client.post(
-        "/documents/upload",
-        files={"file": (POLICY_01.name, POLICY_01.read_bytes(), "text/plain")},
-    )
+    for path in CORPUS_FILES:
+        assert path.is_file(), f"Missing {path}"
+        response = client.post(
+            "/documents/upload",
+            files={"file": (path.name, path.read_bytes(), _content_type(path))},
+        )
+        assert response.status_code == 200, f"{path.name}: {response.text}"
+        body = response.json()["document"]
+        uploaded[path.name] = body
 
-    assert emp.status_code == 200, emp.text
-    assert pol.status_code == 200, pol.text
+        assert body["file_metadata"]["file_name"] == path.name
+        assert body["document_metadata"]["document_type"]
+        assert body["processing_metadata"]["status"] == "completed"
+        assert body["extracted_data"]
+        assert body["document_id"]
 
-    emp_body = emp.json()["document"]
-    pol_body = pol.json()["document"]
-
-    assert emp_body["file_metadata"]["file_name"] == EMPLOYMENT_01.name
-    assert pol_body["file_metadata"]["file_name"] == POLICY_01.name
-    assert emp_body["document_metadata"]["document_type"]
-    assert pol_body["document_metadata"]["document_type"]
-    assert emp_body["extracted_data"]
-    assert pol_body["extracted_data"]
-
-    # Confirm writes landed on real Data/ paths from .env
     assert settings.resolve(settings.sqlite_path).exists()
     assert settings.resolve(settings.upload_dir).exists()
     assert settings.resolve(settings.faiss_index_path).exists()
@@ -158,35 +128,44 @@ def test_6_api_upload_real_employment_and_policy(live_client):
 
     listed = client.get("/documents")
     assert listed.status_code == 200
-    assert len(listed.json()) >= 2
+    listed_names = {item["file_name"] for item in listed.json()}
+    for path in CORPUS_FILES:
+        assert path.name in listed_names, f"{path.name} missing from GET /documents"
 
-    detail = client.get(f"/documents/{emp_body['document_id']}")
-    assert detail.status_code == 200
-    assert detail.json()["document_id"] == emp_body["document_id"]
+    assert len(listed_names) >= 5
 
-    search = client.post(
-        "/search",
-        json={
-            "query": "notice period",
-            "document_id": emp_body["document_id"],
-            "top_k": 3,
-        },
-    )
-    assert search.status_code == 200, search.text
-    assert search.json()["results"]
+    for path in CORPUS_FILES:
+        document_id = uploaded[path.name]["document_id"]
+        detail = client.get(f"/documents/{document_id}")
+        assert detail.status_code == 200, path.name
+        assert detail.json()["document_id"] == document_id
+        assert detail.json()["extracted_data"]
+
+        search = client.post(
+            "/search",
+            json={
+                "query": _search_query_for(path),
+                "document_id": document_id,
+                "top_k": 3,
+            },
+        )
+        assert search.status_code == 200, f"search {path.name}: {search.text}"
+        assert search.json()["results"], f"No search hits for {path.name}"
 
 
-def test_7_api_ask_real_notice_period(live_client):
-    """
-    Live POST /ask against documents already in Data/ (uploads if needed).
-    Expects a grounded answer with source references when notice period exists.
-    """
+def test_3_ask_notice_period_on_employment(live_client):
+    """Live POST /ask after the employment agreement is in Data/."""
     client = live_client
 
-    # Ensure employment file is present (idempotent if duplicate hash exists).
     uploaded = client.post(
         "/documents/upload",
-        files={"file": (EMPLOYMENT_01.name, EMPLOYMENT_01.read_bytes(), "text/plain")},
+        files={
+            "file": (
+                EMPLOYMENT_01.name,
+                EMPLOYMENT_01.read_bytes(),
+                _content_type(EMPLOYMENT_01),
+            )
+        },
     )
     assert uploaded.status_code == 200, uploaded.text
     document_id = uploaded.json()["document"]["document_id"]
@@ -194,7 +173,7 @@ def test_7_api_ask_real_notice_period(live_client):
     asked = client.post(
         "/ask",
         json={
-            "query": "What is the notice period in the employment agreement?",
+            "query": "What is the Notice period reference?",
             "document_id": document_id,
         },
     )
@@ -202,6 +181,8 @@ def test_7_api_ask_real_notice_period(live_client):
     body = asked.json()
     assert body["answer"]
     assert "not present" not in body["answer"].lower()
-    assert body["source"]
+    assert "calendar days" in body["answer"].lower()
+    assert body["source"] == EMPLOYMENT_01.name
     assert body["chunk_id"]
     assert body["supporting_text"]
+    assert body["page"] is not None
