@@ -22,7 +22,7 @@ Document types:
 ## Stack
 
 - API: FastAPI
-- LLM: DeepSeek V4.1 Flash on NVIDIA NIM
+- LLM: NVIDIA NIM (default `nvidia/nemotron-3-ultra-550b-a55b`; OpenAI / Gemini also supported via `LLM_PROVIDER`)
 - Embeddings: `BAAI/bge-base-en-v1.5` (local)
 - PDF: PyMuPDF
 - DB: SQLite
@@ -75,7 +75,7 @@ flowchart TD
     F --> G["classify_document<br/>one of 5 types"]
     G --> H["extract_fields<br/>fill typed schema"]
     H --> I["save_document<br/>SQLite metadata + JSON"]
-    I --> J["chunk_pages<br/>1000 chars, 150 overlap"]
+    I --> J["chunk_pages<br/>recursive split, 1000 / 150"]
     J --> K["embed_chunks<br/>BGE local model"]
     K --> L["FAISS add_chunks"]
     L --> M["return DocumentRecord<br/>duplicate = false"]
@@ -108,7 +108,7 @@ for the role of Software Engineer. The notice period is 60 days.
 5. **Classify.** The LLM must pick one of the five document types. Unknown labels fall back to `Other`.
 6. **Extract.** The matching schema is filled. Missing text fields become `null`, missing lists become `[]`, extras go into `other_fields`.
 7. **Save.** One row in `documents`, one row in `extracted_documents`.
-8. **Chunk + embed + FAISS.** Text is split to ~1000 characters with 150 overlap. Each chunk is prefixed with filename, type, title, and summary, then embedded with `BAAI/bge-base-en-v1.5` and stored in FAISS.
+8. **Chunk + embed + FAISS.** Text is split with recursive separators (paragraph → sentence → word), capped at ~1000 characters with 150 overlap. Each chunk is prefixed with filename, type, title, and summary, then embedded with `BAAI/bge-base-en-v1.5` and stored in FAISS.
 
 After that, `/search` and `/ask` only read FAISS + SQLite. They do not re-parse the file.
 
@@ -384,7 +384,7 @@ POST /search
 **Ask** runs the same search, then:
 
 1. If there are no hits, or the best score is below `MIN_SCORE` (`0.35`), it returns *This information is not present in the uploaded documents.*
-2. Otherwise it sends those chunks to DeepSeek and requires the answer to come from that context.
+2. Otherwise it sends those chunks to the configured LLM and requires the answer to come from that context.
 
 ```json
 POST /ask
@@ -437,15 +437,82 @@ Known design notes (not schema mismatches):
 - SQLite keeps `file_path`, but the API `FileMetadata` does not return it.
 - Duplicate detection uses the DB hash. If SQLite has the file but FAISS was wiped, a re-upload is skipped and search will miss it.
 
+## Assignment coverage
+
+Checked against the brief (required items vs optional bonuses):
+
+| Requirement | Status |
+|---|---|
+| PDF / TXT upload + text extraction | Done (`parser`, `storage`) |
+| Meaningful chunking + metadata (id, name, page, chunk id, timestamp) | Done (recursive chunker + SQLite) |
+| LLM structured JSON extraction with schema | Done (typed schemas per document type) |
+| Missing fields + malformed LLM JSON handling | Done (`null` / `[]`, `missing_fields`, `chat_json` retry) |
+| Avoid inventing facts not in the file | Done (prompts + refusal path; not perfect) |
+| Embeddings + vector store + RAG answers with sources | Done (BGE + FAISS + `/ask`) |
+| Five REST endpoints | Done |
+| Invalid/empty files, LLM failures, no-hit queries, logging | Done |
+| README, architecture diagram, sample data, Swagger, ≥5 tests | Done |
+| Dedicated “compare two documents” endpoint | Not built — `/ask` can only approximate if both docs are retrieved |
+| Bonus: hybrid search / reranking / background jobs / eval harness / agent | Not implemented (optional) |
+| Bonus: document-level filtering | Partially done (`document_id` / `document_type` on `/search` and `/ask`) |
+
+Sample files live under `TEST_DATA/` (TXT) and `Data/` (PDFs). Manual + automated walkthrough: [TESTING.md](TESTING.md).
+
+External services: LLM calls go through NVIDIA NIM by default (API key required). OpenAI and Gemini are optional via `LLM_PROVIDER`. Embeddings run locally — no paid embedding API.
+
+## Design decisions
+
+These are the short write-ups asked for in the deliverables.
+
+### Why I chose this embedding model
+
+I went with `BAAI/bge-base-en-v1.5` because it is built for retrieval, not just generic sentence similarity, and it runs locally through `sentence-transformers`. For a 5–6 hour assignment that mattered: no second API bill, works offline after the first download, and the quality is good enough for English policy / agreement text.
+
+I also normalize the vectors, so FAISS inner-product search behaves like cosine similarity. Before embedding, each chunk is prefixed with the file name, type, title, and a short summary. That is a small trick so a query like “notice period in the employment agreement” is more likely to land on the right file when several uploads share similar wording.
+
+### How chunking works
+
+Chunking is page-aware and recursive. Each PDF page (or the whole TXT as page 1) is split on its own so page citations stay honest.
+
+Instead of cutting every 1000 characters blindly, the splitter tries natural breaks first: paragraphs (`\n\n`), then lines, then sentences, then words, and only then raw characters if nothing else fits. Pieces are packed up to `CHUNK_SIZE` (1000). Neighbouring chunks overlap by `CHUNK_OVERLAP` (150), except across paragraph boundaries, so a clause sitting on a boundary still shows up in both places.
+
+Each chunk keeps `document_id`, `chunk_id`, `page_number`, and the raw text. That metadata is what `/search` and `/ask` use when they return sources.
+
+### How retrieval relevance is determined
+
+The query is embedded with the same BGE model. FAISS returns the nearest chunks by cosine similarity. You can optionally narrow results to one `document_id` or an exact `document_type`.
+
+`/search` just returns those hits with scores. `/ask` is stricter: if there are no hits, or the best score is below `MIN_SCORE` (0.35), it refuses to answer. Only when retrieval looks strong enough do we send the top chunks to the LLM and ask it to answer from that context alone. A successful answer always comes back with source file, page, chunk id, and supporting text.
+
+### How hallucinations are handled
+
+I treated this as layered defence rather than trusting a single prompt.
+
+On extraction, the model is told to pull only what is written, leave missing text as null / empty lists, and put unexpected facts in `other_fields`. The result has to pass a Pydantic schema; bad JSON is retried once and then fails cleanly.
+
+On Q&A, weak retrieval never reaches the LLM. When it does, the prompt says “answer only from the context” and to admit when the answer is not there. If the model still hedges into the not-found phrase, the API returns that message with no fake source.
+
+This reduces unsupported answers; it does not make them impossible. A fluent model can still paraphrase a weakly related chunk. That is why source text is always returned for successful answers — so a reviewer can check the claim.
+
+### What limitations exist
+
+Recursive character splitting is better than fixed windows, but it is still not true semantic chunking. Headings and tables are not specially detected. TXT files have no real pages, so page is always 1.
+
+There is no keyword / hybrid search and no reranker, so exact IDs or rare terms can be missed. Uploads are processed inline, so large PDFs feel slow. Duplicate detection is hash-based: if you delete FAISS but keep SQLite, a re-upload is skipped and search can miss that file.
+
+“Summarise the differences between two documents” is only possible in a weak sense through `/ask` if both documents are retrieved — there is no dedicated compare API. LLM quality and latency also depend on whichever provider key you configure.
+
 ## Config
 
 Knobs live in `.env` (see `.env.example`):
 
 | Variable | Default | Role |
 |---|---|---|
-| `NVIDIA_API_KEY` | empty | Required for summarize / classify / extract / ask |
+| `LLM_PROVIDER` | `nvidia` | `nvidia`, `openai`, or `gemini` |
+| `NVIDIA_API_KEY` | empty | Required when provider is nvidia |
 | `NVIDIA_BASE_URL` | `https://integrate.api.nvidia.com/v1` | NVIDIA NIM endpoint |
-| `NVIDIA_LLM_MODEL` | `deepseek-ai/deepseek-v4.1-flash` | Chat model |
+| `NVIDIA_LLM_MODEL` | `nvidia/nemotron-3-ultra-550b-a55b` | Chat model on NIM |
+| `OPENAI_API_KEY` / `GEMINI_API_KEY` | empty | Used when those providers are selected |
 | `EMBEDDING_MODEL` | `BAAI/bge-base-en-v1.5` | Local sentence-transformers model |
 | `CHUNK_SIZE` | `1000` | Characters per chunk |
 | `CHUNK_OVERLAP` | `150` | Overlap between chunks |
@@ -461,13 +528,10 @@ Knobs live in `.env` (see `.env.example`):
 
 ## Tests
 
-From the project root:
+Reviewer guide (manual + automated, sample paths under `TEST_DATA/` and `Data/`): **[TESTING.md](TESTING.md)**
 
 ```powershell
-pytest tests/test_config.py -v
-pytest tests/test_schemas.py -v
-pytest tests/test_parser.py -v
 pytest tests -v
 ```
 
-More detail: [tests/README.md](tests/README.md)
+Module-by-module commands: [tests/README.md](tests/README.md)

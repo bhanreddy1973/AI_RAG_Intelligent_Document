@@ -1,0 +1,680 @@
+EMPLOYMENT AGREEMENT — Mira Deshpande / Northstar Analytics Pvt. Ltd.
+Fictional synthetic test document | Variant 1 Prepared for
+document-ingestion, classification, extraction, chunking and RAG testing
+IMPORTANT: All organizations, people, identifiers, values and examples
+are fictional.
+==============================================================================
+
+PAGE 1 OF 16 Parties, Appointment and Definitions
+
+This section describes the employment arrangement administered by
+Northstar Analytics Pvt. Ltd.. The employee’s assigned work location is
+Pune, subject to reasonable changes communicated in writing. The role is
+expected to collaborate with product, engineering, operations, and
+compliance teams. Responsibilities may evolve as business priorities
+change, provided that material changes are discussed with the employee
+and remain consistent with the role’s level and applicable law.
+Operational records relating to parties, appointment and definitions
+should be maintained in the company’s approved people-management system.
+The employee is responsible for keeping contact details, emergency
+contacts, tax declarations, and bank information current. Access to
+these records is limited to authorized personnel with a legitimate
+business need. Corrections can be requested through People Operations,
+and requests should identify the record, the proposed correction, and
+any supporting material. Where a decision affects compensation,
+reporting lines, work location, or employment status, the company will
+communicate the decision through an authorized written channel. Informal
+discussions do not amend contractual terms unless confirmed by an
+authorized representative. The parties should retain copies of signed
+amendments and related notices. Questions about interpretation should be
+directed to People Operations before either party relies on an assumed
+variation.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-101. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 12 lakh, subject to the signed compensation schedule. -
+Notice period reference: 30 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 2 OF 16 Role, Duties and Reporting
+
+Operational records relating to role, duties and reporting should be
+maintained in the company’s approved people-management system. The
+employee is responsible for keeping contact details, emergency contacts,
+tax declarations, and bank information current. Access to these records
+is limited to authorized personnel with a legitimate business need.
+Corrections can be requested through People Operations, and requests
+should identify the record, the proposed correction, and any supporting
+material. Where a decision affects compensation, reporting lines, work
+location, or employment status, the company will communicate the
+decision through an authorized written channel. Informal discussions do
+not amend contractual terms unless confirmed by an authorized
+representative. The parties should retain copies of signed amendments
+and related notices. Questions about interpretation should be directed
+to People Operations before either party relies on an assumed variation.
+The employee must use reasonable care when handling company property,
+credentials, confidential information, and customer materials. Equipment
+issued for work remains company property unless a separate written
+transfer is made. Loss, suspected compromise, or damage should be
+reported promptly through the service desk. On separation, equipment and
+access tokens must be returned or disabled according to the exit
+checklist and documented handover process.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-102. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 13 lakh, subject to the signed compensation schedule. -
+Notice period reference: 45 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 3 OF 16 Work Location and Working Arrangements
+
+Where a decision affects compensation, reporting lines, work location,
+or employment status, the company will communicate the decision through
+an authorized written channel. Informal discussions do not amend
+contractual terms unless confirmed by an authorized representative. The
+parties should retain copies of signed amendments and related notices.
+Questions about interpretation should be directed to People Operations
+before either party relies on an assumed variation. The employee must
+use reasonable care when handling company property, credentials,
+confidential information, and customer materials. Equipment issued for
+work remains company property unless a separate written transfer is
+made. Loss, suspected compromise, or damage should be reported promptly
+through the service desk. On separation, equipment and access tokens
+must be returned or disabled according to the exit checklist and
+documented handover process. This section describes the employment
+arrangement administered by Northstar Analytics Pvt. Ltd.. The
+employee’s assigned work location is Pune, subject to reasonable changes
+communicated in writing. The role is expected to collaborate with
+product, engineering, operations, and compliance teams. Responsibilities
+may evolve as business priorities change, provided that material changes
+are discussed with the employee and remain consistent with the role’s
+level and applicable law.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-103. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 14 lakh, subject to the signed compensation schedule. -
+Notice period reference: 60 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 4 OF 16 Working Hours, Attendance and Leave
+
+The employee must use reasonable care when handling company property,
+credentials, confidential information, and customer materials. Equipment
+issued for work remains company property unless a separate written
+transfer is made. Loss, suspected compromise, or damage should be
+reported promptly through the service desk. On separation, equipment and
+access tokens must be returned or disabled according to the exit
+checklist and documented handover process. This section describes the
+employment arrangement administered by Northstar Analytics Pvt. Ltd..
+The employee’s assigned work location is Pune, subject to reasonable
+changes communicated in writing. The role is expected to collaborate
+with product, engineering, operations, and compliance teams.
+Responsibilities may evolve as business priorities change, provided that
+material changes are discussed with the employee and remain consistent
+with the role’s level and applicable law. Operational records relating
+to working hours, attendance and leave should be maintained in the
+company’s approved people-management system. The employee is responsible
+for keeping contact details, emergency contacts, tax declarations, and
+bank information current. Access to these records is limited to
+authorized personnel with a legitimate business need. Corrections can be
+requested through People Operations, and requests should identify the
+record, the proposed correction, and any supporting material.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-104. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 15 lakh, subject to the signed compensation schedule. -
+Notice period reference: 30 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 5 OF 16 Compensation and Payroll Administration
+
+This section describes the employment arrangement administered by
+Northstar Analytics Pvt. Ltd.. The employee’s assigned work location is
+Pune, subject to reasonable changes communicated in writing. The role is
+expected to collaborate with product, engineering, operations, and
+compliance teams. Responsibilities may evolve as business priorities
+change, provided that material changes are discussed with the employee
+and remain consistent with the role’s level and applicable law.
+Operational records relating to compensation and payroll administration
+should be maintained in the company’s approved people-management system.
+The employee is responsible for keeping contact details, emergency
+contacts, tax declarations, and bank information current. Access to
+these records is limited to authorized personnel with a legitimate
+business need. Corrections can be requested through People Operations,
+and requests should identify the record, the proposed correction, and
+any supporting material. Where a decision affects compensation,
+reporting lines, work location, or employment status, the company will
+communicate the decision through an authorized written channel. Informal
+discussions do not amend contractual terms unless confirmed by an
+authorized representative. The parties should retain copies of signed
+amendments and related notices. Questions about interpretation should be
+directed to People Operations before either party relies on an assumed
+variation.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-105. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 12 lakh, subject to the signed compensation schedule. -
+Notice period reference: 45 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 6 OF 16 Benefits and Expense Reimbursement
+
+Operational records relating to benefits and expense reimbursement
+should be maintained in the company’s approved people-management system.
+The employee is responsible for keeping contact details, emergency
+contacts, tax declarations, and bank information current. Access to
+these records is limited to authorized personnel with a legitimate
+business need. Corrections can be requested through People Operations,
+and requests should identify the record, the proposed correction, and
+any supporting material. Where a decision affects compensation,
+reporting lines, work location, or employment status, the company will
+communicate the decision through an authorized written channel. Informal
+discussions do not amend contractual terms unless confirmed by an
+authorized representative. The parties should retain copies of signed
+amendments and related notices. Questions about interpretation should be
+directed to People Operations before either party relies on an assumed
+variation. The employee must use reasonable care when handling company
+property, credentials, confidential information, and customer materials.
+Equipment issued for work remains company property unless a separate
+written transfer is made. Loss, suspected compromise, or damage should
+be reported promptly through the service desk. On separation, equipment
+and access tokens must be returned or disabled according to the exit
+checklist and documented handover process.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-106. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 13 lakh, subject to the signed compensation schedule. -
+Notice period reference: 60 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 7 OF 16 Probation, Performance and Development
+
+Where a decision affects compensation, reporting lines, work location,
+or employment status, the company will communicate the decision through
+an authorized written channel. Informal discussions do not amend
+contractual terms unless confirmed by an authorized representative. The
+parties should retain copies of signed amendments and related notices.
+Questions about interpretation should be directed to People Operations
+before either party relies on an assumed variation. The employee must
+use reasonable care when handling company property, credentials,
+confidential information, and customer materials. Equipment issued for
+work remains company property unless a separate written transfer is
+made. Loss, suspected compromise, or damage should be reported promptly
+through the service desk. On separation, equipment and access tokens
+must be returned or disabled according to the exit checklist and
+documented handover process. This section describes the employment
+arrangement administered by Northstar Analytics Pvt. Ltd.. The
+employee’s assigned work location is Pune, subject to reasonable changes
+communicated in writing. The role is expected to collaborate with
+product, engineering, operations, and compliance teams. Responsibilities
+may evolve as business priorities change, provided that material changes
+are discussed with the employee and remain consistent with the role’s
+level and applicable law.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-107. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 14 lakh, subject to the signed compensation schedule. -
+Notice period reference: 30 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 8 OF 16 Confidentiality and Protected Information
+
+The employee must use reasonable care when handling company property,
+credentials, confidential information, and customer materials. Equipment
+issued for work remains company property unless a separate written
+transfer is made. Loss, suspected compromise, or damage should be
+reported promptly through the service desk. On separation, equipment and
+access tokens must be returned or disabled according to the exit
+checklist and documented handover process. This section describes the
+employment arrangement administered by Northstar Analytics Pvt. Ltd..
+The employee’s assigned work location is Pune, subject to reasonable
+changes communicated in writing. The role is expected to collaborate
+with product, engineering, operations, and compliance teams.
+Responsibilities may evolve as business priorities change, provided that
+material changes are discussed with the employee and remain consistent
+with the role’s level and applicable law. Operational records relating
+to confidentiality and protected information should be maintained in the
+company’s approved people-management system. The employee is responsible
+for keeping contact details, emergency contacts, tax declarations, and
+bank information current. Access to these records is limited to
+authorized personnel with a legitimate business need. Corrections can be
+requested through People Operations, and requests should identify the
+record, the proposed correction, and any supporting material.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-108. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 15 lakh, subject to the signed compensation schedule. -
+Notice period reference: 45 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 9 OF 16 Intellectual Property and Work Product
+
+This section describes the employment arrangement administered by
+Northstar Analytics Pvt. Ltd.. The employee’s assigned work location is
+Pune, subject to reasonable changes communicated in writing. The role is
+expected to collaborate with product, engineering, operations, and
+compliance teams. Responsibilities may evolve as business priorities
+change, provided that material changes are discussed with the employee
+and remain consistent with the role’s level and applicable law.
+Operational records relating to intellectual property and work product
+should be maintained in the company’s approved people-management system.
+The employee is responsible for keeping contact details, emergency
+contacts, tax declarations, and bank information current. Access to
+these records is limited to authorized personnel with a legitimate
+business need. Corrections can be requested through People Operations,
+and requests should identify the record, the proposed correction, and
+any supporting material. Where a decision affects compensation,
+reporting lines, work location, or employment status, the company will
+communicate the decision through an authorized written channel. Informal
+discussions do not amend contractual terms unless confirmed by an
+authorized representative. The parties should retain copies of signed
+amendments and related notices. Questions about interpretation should be
+directed to People Operations before either party relies on an assumed
+variation.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-109. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 12 lakh, subject to the signed compensation schedule. -
+Notice period reference: 60 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 10 OF 16 Acceptable Use and Company Property
+
+Operational records relating to acceptable use and company property
+should be maintained in the company’s approved people-management system.
+The employee is responsible for keeping contact details, emergency
+contacts, tax declarations, and bank information current. Access to
+these records is limited to authorized personnel with a legitimate
+business need. Corrections can be requested through People Operations,
+and requests should identify the record, the proposed correction, and
+any supporting material. Where a decision affects compensation,
+reporting lines, work location, or employment status, the company will
+communicate the decision through an authorized written channel. Informal
+discussions do not amend contractual terms unless confirmed by an
+authorized representative. The parties should retain copies of signed
+amendments and related notices. Questions about interpretation should be
+directed to People Operations before either party relies on an assumed
+variation. The employee must use reasonable care when handling company
+property, credentials, confidential information, and customer materials.
+Equipment issued for work remains company property unless a separate
+written transfer is made. Loss, suspected compromise, or damage should
+be reported promptly through the service desk. On separation, equipment
+and access tokens must be returned or disabled according to the exit
+checklist and documented handover process.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-110. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 13 lakh, subject to the signed compensation schedule. -
+Notice period reference: 30 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 11 OF 16 Conflicts of Interest and Outside Activities
+
+Where a decision affects compensation, reporting lines, work location,
+or employment status, the company will communicate the decision through
+an authorized written channel. Informal discussions do not amend
+contractual terms unless confirmed by an authorized representative. The
+parties should retain copies of signed amendments and related notices.
+Questions about interpretation should be directed to People Operations
+before either party relies on an assumed variation. The employee must
+use reasonable care when handling company property, credentials,
+confidential information, and customer materials. Equipment issued for
+work remains company property unless a separate written transfer is
+made. Loss, suspected compromise, or damage should be reported promptly
+through the service desk. On separation, equipment and access tokens
+must be returned or disabled according to the exit checklist and
+documented handover process. This section describes the employment
+arrangement administered by Northstar Analytics Pvt. Ltd.. The
+employee’s assigned work location is Pune, subject to reasonable changes
+communicated in writing. The role is expected to collaborate with
+product, engineering, operations, and compliance teams. Responsibilities
+may evolve as business priorities change, provided that material changes
+are discussed with the employee and remain consistent with the role’s
+level and applicable law.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-111. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 14 lakh, subject to the signed compensation schedule. -
+Notice period reference: 45 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 12 OF 16 Data Protection and Security
+
+The employee must use reasonable care when handling company property,
+credentials, confidential information, and customer materials. Equipment
+issued for work remains company property unless a separate written
+transfer is made. Loss, suspected compromise, or damage should be
+reported promptly through the service desk. On separation, equipment and
+access tokens must be returned or disabled according to the exit
+checklist and documented handover process. This section describes the
+employment arrangement administered by Northstar Analytics Pvt. Ltd..
+The employee’s assigned work location is Pune, subject to reasonable
+changes communicated in writing. The role is expected to collaborate
+with product, engineering, operations, and compliance teams.
+Responsibilities may evolve as business priorities change, provided that
+material changes are discussed with the employee and remain consistent
+with the role’s level and applicable law. Operational records relating
+to data protection and security should be maintained in the company’s
+approved people-management system. The employee is responsible for
+keeping contact details, emergency contacts, tax declarations, and bank
+information current. Access to these records is limited to authorized
+personnel with a legitimate business need. Corrections can be requested
+through People Operations, and requests should identify the record, the
+proposed correction, and any supporting material.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-112. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 15 lakh, subject to the signed compensation schedule. -
+Notice period reference: 60 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 13 OF 16 Disciplinary Process and Grievances
+
+This section describes the employment arrangement administered by
+Northstar Analytics Pvt. Ltd.. The employee’s assigned work location is
+Pune, subject to reasonable changes communicated in writing. The role is
+expected to collaborate with product, engineering, operations, and
+compliance teams. Responsibilities may evolve as business priorities
+change, provided that material changes are discussed with the employee
+and remain consistent with the role’s level and applicable law.
+Operational records relating to disciplinary process and grievances
+should be maintained in the company’s approved people-management system.
+The employee is responsible for keeping contact details, emergency
+contacts, tax declarations, and bank information current. Access to
+these records is limited to authorized personnel with a legitimate
+business need. Corrections can be requested through People Operations,
+and requests should identify the record, the proposed correction, and
+any supporting material. Where a decision affects compensation,
+reporting lines, work location, or employment status, the company will
+communicate the decision through an authorized written channel. Informal
+discussions do not amend contractual terms unless confirmed by an
+authorized representative. The parties should retain copies of signed
+amendments and related notices. Questions about interpretation should be
+directed to People Operations before either party relies on an assumed
+variation.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-113. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 12 lakh, subject to the signed compensation schedule. -
+Notice period reference: 30 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 14 OF 16 Termination and Notice
+
+Operational records relating to termination and notice should be
+maintained in the company’s approved people-management system. The
+employee is responsible for keeping contact details, emergency contacts,
+tax declarations, and bank information current. Access to these records
+is limited to authorized personnel with a legitimate business need.
+Corrections can be requested through People Operations, and requests
+should identify the record, the proposed correction, and any supporting
+material. Where a decision affects compensation, reporting lines, work
+location, or employment status, the company will communicate the
+decision through an authorized written channel. Informal discussions do
+not amend contractual terms unless confirmed by an authorized
+representative. The parties should retain copies of signed amendments
+and related notices. Questions about interpretation should be directed
+to People Operations before either party relies on an assumed variation.
+The employee must use reasonable care when handling company property,
+credentials, confidential information, and customer materials. Equipment
+issued for work remains company property unless a separate written
+transfer is made. Loss, suspected compromise, or damage should be
+reported promptly through the service desk. On separation, equipment and
+access tokens must be returned or disabled according to the exit
+checklist and documented handover process.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-114. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 13 lakh, subject to the signed compensation schedule. -
+Notice period reference: 45 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 15 OF 16 Post-Employment Obligations
+
+Where a decision affects compensation, reporting lines, work location,
+or employment status, the company will communicate the decision through
+an authorized written channel. Informal discussions do not amend
+contractual terms unless confirmed by an authorized representative. The
+parties should retain copies of signed amendments and related notices.
+Questions about interpretation should be directed to People Operations
+before either party relies on an assumed variation. The employee must
+use reasonable care when handling company property, credentials,
+confidential information, and customer materials. Equipment issued for
+work remains company property unless a separate written transfer is
+made. Loss, suspected compromise, or damage should be reported promptly
+through the service desk. On separation, equipment and access tokens
+must be returned or disabled according to the exit checklist and
+documented handover process. This section describes the employment
+arrangement administered by Northstar Analytics Pvt. Ltd.. The
+employee’s assigned work location is Pune, subject to reasonable changes
+communicated in writing. The role is expected to collaborate with
+product, engineering, operations, and compliance teams. Responsibilities
+may evolve as business priorities change, provided that material changes
+are discussed with the employee and remain consistent with the role’s
+level and applicable law.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-115. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 14 lakh, subject to the signed compensation schedule. -
+Notice period reference: 60 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 16 OF 16 Execution, Amendments and Governing Terms
+
+The employee must use reasonable care when handling company property,
+credentials, confidential information, and customer materials. Equipment
+issued for work remains company property unless a separate written
+transfer is made. Loss, suspected compromise, or damage should be
+reported promptly through the service desk. On separation, equipment and
+access tokens must be returned or disabled according to the exit
+checklist and documented handover process. This section describes the
+employment arrangement administered by Northstar Analytics Pvt. Ltd..
+The employee’s assigned work location is Pune, subject to reasonable
+changes communicated in writing. The role is expected to collaborate
+with product, engineering, operations, and compliance teams.
+Responsibilities may evolve as business priorities change, provided that
+material changes are discussed with the employee and remain consistent
+with the role’s level and applicable law. Operational records relating
+to execution, amendments and governing terms should be maintained in the
+company’s approved people-management system. The employee is responsible
+for keeping contact details, emergency contacts, tax declarations, and
+bank information current. Access to these records is limited to
+authorized personnel with a legitimate business need. Corrections can be
+requested through People Operations, and requests should identify the
+record, the proposed correction, and any supporting material.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Employee: Mira Deshpande.
+Employer representative: Arjun Mehta. Reference number: EMP-01-116. -
+Compensation review cycle: April each year. Illustrative annual base
+salary: INR 15 lakh, subject to the signed compensation schedule. -
+Notice period reference: 30 calendar days, unless a different period is
+stated in the executed offer or applicable law. - The employee should
+disclose any actual or potential conflict within five working days after
+becoming aware of it.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.

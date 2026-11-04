@@ -1,9 +1,12 @@
+import logging
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 
 from app.config import settings
-from app.nvidia_client import chat_json
+from app.nvidia_client import LLMError, chat_json
 from app.parser import Page
+
+logger = logging.getLogger("docintel")
 
 
 @dataclass
@@ -27,26 +30,48 @@ def _page_batches(pages: list[Page], size: int) -> list[list[Page]]:
     return [pages[i : i + size] for i in range(0, len(pages), size)]
 
 
+def _fallback_summary(batch: list[Page]) -> str:
+    text = " ".join(page.text for page in batch)
+    text = " ".join(text.split())
+    if not text:
+        return "No readable text in these pages."
+    return text[:500]
+
+
 def _summarize_batch(batch_index: int, batch: list[Page]) -> BatchSummary:
     body = "\n\n".join(f"[Page {page.page_number}]\n{page.text}" for page in batch)
-    data = chat_json(
-        [
-            {
-                "role": "system",
-                "content": (
-                    "Summarize only facts present in the text. "
-                    'Return JSON: {"summary": "..."}'
-                ),
-            },
-            {"role": "user", "content": body[:12000]},
-        ],
-        max_tokens=400,
-    )
+    try:
+        data = chat_json(
+            [
+                {
+                    "role": "system",
+                    "content": (
+                        "Summarize only facts present in the text. "
+                        "Keep the summary to 1-2 short sentences. "
+                        'Return JSON only: {"summary": "..."}'
+                    ),
+                },
+                {"role": "user", "content": body[:8000]},
+            ],
+            max_tokens=300,
+        )
+        summary = str(data.get("summary") or "").strip()
+        if not summary:
+            summary = _fallback_summary(batch)
+    except LLMError as exc:
+        # Large PDFs make many batch calls; one bad JSON reply must not fail upload.
+        logger.warning(
+            "Batch %s summary failed (%s). Using text fallback.",
+            batch_index,
+            exc,
+        )
+        summary = _fallback_summary(batch)
+
     return BatchSummary(
         batch_index=batch_index,
         page_start=batch[0].page_number,
         page_end=batch[-1].page_number,
-        summary=str(data.get("summary") or "").strip(),
+        summary=summary,
     )
 
 
@@ -75,13 +100,15 @@ def summarize_pages(pages: list[Page]) -> DocumentOverview:
                 "content": (
                     "Create document metadata from batch summaries. "
                     "Use only information that is present. "
-                    'Return JSON: {"title": "...", "short_summary": "...", '
+                    "Keep short_summary to 2-3 sentences. "
+                    "Return JSON only: "
+                    '{"title": "...", "short_summary": "...", '
                     '"key_topics": ["..."], "entities": ["..."]}'
                 ),
             },
             {"role": "user", "content": combined[:8000]},
         ],
-        max_tokens=500,
+        max_tokens=700,
     )
 
     topics = meta.get("key_topics") or []

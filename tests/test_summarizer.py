@@ -1,3 +1,4 @@
+from app.nvidia_client import LLMError
 from app.parser import Page
 from app.summarizer import summarize_pages
 
@@ -38,3 +39,25 @@ def test_summarize_pages_batches_and_combines(monkeypatch):
     assert overview.key_topics == ["notice period"]
     assert overview.entities == ["ABC Technologies"]
     assert len(calls) == 3
+
+
+def test_summarize_batch_falls_back_when_llm_json_fails(monkeypatch):
+    monkeypatch.setattr("app.summarizer.settings.pages_per_batch", 2)
+    monkeypatch.setattr("app.summarizer.settings.max_parallel", 1)
+
+    def fake_chat_json(messages, max_tokens=1024, retries=1):
+        user = messages[-1]["content"]
+        if user.startswith("Pages "):
+            return {
+                "title": "Policy Manual",
+                "short_summary": "Fallback still works.",
+                "key_topics": ["policy"],
+                "entities": ["TriageLogic"],
+            }
+        raise LLMError("LLM did not return JSON.")
+
+    monkeypatch.setattr("app.summarizer.chat_json", fake_chat_json)
+
+    overview = summarize_pages([Page(1, "Company policy text about HIPAA.")])
+    assert "HIPAA" in overview.batch_summaries[0].summary
+    assert overview.title == "Policy Manual"

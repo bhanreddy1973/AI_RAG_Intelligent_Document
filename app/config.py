@@ -14,7 +14,17 @@ class Settings(BaseSettings):
 
     nvidia_api_key: str = ""
     nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
-    nvidia_llm_model: str = "deepseek-ai/deepseek-v4.1-flash"
+    nvidia_llm_model: str = "nvidia/nemotron-3-ultra-550b-a55b"
+
+    # Use nvidia (NIM), openai, or gemini
+    llm_provider: str = "nvidia"
+    gemini_api_key: str = ""
+    gemini_base_url: str = "https://generativelanguage.googleapis.com/v1beta"
+    gemini_model: str = "gemini-flash-latest"
+
+    openai_api_key: str = ""
+    openai_base_url: str = "https://api.openai.com/v1"
+    openai_llm_model: str = "gpt-4o-mini"
 
     embedding_model: str = "BAAI/bge-base-en-v1.5"
 

@@ -1,0 +1,627 @@
+COMPANY POLICY HANDBOOK — Cedarline Technologies Pvt. Ltd. Fictional
+synthetic test document | Variant 3 Prepared for document-ingestion,
+classification, extraction, chunking and RAG testing IMPORTANT: All
+organizations, people, identifiers, values and examples are fictional.
+==============================================================================
+
+PAGE 1 OF 16 Purpose, Scope and Policy Ownership
+
+This policy establishes consistent operating expectations for purpose,
+scope and policy ownership across Cedarline Technologies Pvt. Ltd.. It
+applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied. Managers are responsible for explaining the
+requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently. Records created under this
+policy must be accurate, complete, and stored in an approved repository.
+Access should be limited to personnel who need the information for an
+authorized purpose. Retention periods are determined by the records
+schedule and applicable legal obligations. Employees must not move
+restricted records to personal accounts, unmanaged devices, or
+unapproved collaboration services.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-201. - Review cadence:
+every 6 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 2 OF 16 Code of Conduct and Professional Behavior
+
+Managers are responsible for explaining the requirements to their teams,
+confirming that relevant training is completed, and retaining evidence
+of required approvals. Employees must follow the published process and
+report suspected non-compliance without delay. The policy owner reviews
+operational feedback and may issue clarifications where recurring
+questions indicate that a requirement is unclear or difficult to apply
+consistently. Records created under this policy must be accurate,
+complete, and stored in an approved repository. Access should be limited
+to personnel who need the information for an authorized purpose.
+Retention periods are determined by the records schedule and applicable
+legal obligations. Employees must not move restricted records to
+personal accounts, unmanaged devices, or unapproved collaboration
+services. Exceptions require a documented business reason, a named
+accountable owner, an assessment of risk, and an expiry or review date.
+Approval must be obtained before the exception is implemented, except
+where an emergency process expressly permits temporary action. The
+policy owner maintains an exception register and reviews open exceptions
+at least quarterly.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-202. - Review cadence:
+every 9 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 3 OF 16 Remote Work and Workplace Availability
+
+Records created under this policy must be accurate, complete, and stored
+in an approved repository. Access should be limited to personnel who
+need the information for an authorized purpose. Retention periods are
+determined by the records schedule and applicable legal obligations.
+Employees must not move restricted records to personal accounts,
+unmanaged devices, or unapproved collaboration services. Exceptions
+require a documented business reason, a named accountable owner, an
+assessment of risk, and an expiry or review date. Approval must be
+obtained before the exception is implemented, except where an emergency
+process expressly permits temporary action. The policy owner maintains
+an exception register and reviews open exceptions at least quarterly.
+This policy establishes consistent operating expectations for remote
+work and workplace availability across Cedarline Technologies Pvt. Ltd..
+It applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-203. - Review cadence:
+every 12 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 4 OF 16 Leave, Attendance and Scheduling
+
+Exceptions require a documented business reason, a named accountable
+owner, an assessment of risk, and an expiry or review date. Approval
+must be obtained before the exception is implemented, except where an
+emergency process expressly permits temporary action. The policy owner
+maintains an exception register and reviews open exceptions at least
+quarterly. This policy establishes consistent operating expectations for
+leave, attendance and scheduling across Cedarline Technologies Pvt.
+Ltd.. It applies to employees, temporary staff, and approved contractors
+when they use company facilities, systems, or information. A business
+unit may publish a local procedure to explain implementation details,
+but a local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied. Managers are responsible for explaining the
+requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-204. - Review cadence:
+every 6 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 5 OF 16 Information Classification and Handling
+
+This policy establishes consistent operating expectations for
+information classification and handling across Cedarline Technologies
+Pvt. Ltd.. It applies to employees, temporary staff, and approved
+contractors when they use company facilities, systems, or information. A
+business unit may publish a local procedure to explain implementation
+details, but a local procedure cannot reduce a control required by this
+policy. Questions about scope should be raised with the policy owner
+before an exception is applied. Managers are responsible for explaining
+the requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently. Records created under this
+policy must be accurate, complete, and stored in an approved repository.
+Access should be limited to personnel who need the information for an
+authorized purpose. Retention periods are determined by the records
+schedule and applicable legal obligations. Employees must not move
+restricted records to personal accounts, unmanaged devices, or
+unapproved collaboration services.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-205. - Review cadence:
+every 9 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 6 OF 16 Access Control and Authentication
+
+Managers are responsible for explaining the requirements to their teams,
+confirming that relevant training is completed, and retaining evidence
+of required approvals. Employees must follow the published process and
+report suspected non-compliance without delay. The policy owner reviews
+operational feedback and may issue clarifications where recurring
+questions indicate that a requirement is unclear or difficult to apply
+consistently. Records created under this policy must be accurate,
+complete, and stored in an approved repository. Access should be limited
+to personnel who need the information for an authorized purpose.
+Retention periods are determined by the records schedule and applicable
+legal obligations. Employees must not move restricted records to
+personal accounts, unmanaged devices, or unapproved collaboration
+services. Exceptions require a documented business reason, a named
+accountable owner, an assessment of risk, and an expiry or review date.
+Approval must be obtained before the exception is implemented, except
+where an emergency process expressly permits temporary action. The
+policy owner maintains an exception register and reviews open exceptions
+at least quarterly.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-206. - Review cadence:
+every 12 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 7 OF 16 Acceptable Use of Devices and Networks
+
+Records created under this policy must be accurate, complete, and stored
+in an approved repository. Access should be limited to personnel who
+need the information for an authorized purpose. Retention periods are
+determined by the records schedule and applicable legal obligations.
+Employees must not move restricted records to personal accounts,
+unmanaged devices, or unapproved collaboration services. Exceptions
+require a documented business reason, a named accountable owner, an
+assessment of risk, and an expiry or review date. Approval must be
+obtained before the exception is implemented, except where an emergency
+process expressly permits temporary action. The policy owner maintains
+an exception register and reviews open exceptions at least quarterly.
+This policy establishes consistent operating expectations for acceptable
+use of devices and networks across Cedarline Technologies Pvt. Ltd.. It
+applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-207. - Review cadence:
+every 6 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 8 OF 16 Privacy, Personal Data and Retention
+
+Exceptions require a documented business reason, a named accountable
+owner, an assessment of risk, and an expiry or review date. Approval
+must be obtained before the exception is implemented, except where an
+emergency process expressly permits temporary action. The policy owner
+maintains an exception register and reviews open exceptions at least
+quarterly. This policy establishes consistent operating expectations for
+privacy, personal data and retention across Cedarline Technologies Pvt.
+Ltd.. It applies to employees, temporary staff, and approved contractors
+when they use company facilities, systems, or information. A business
+unit may publish a local procedure to explain implementation details,
+but a local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied. Managers are responsible for explaining the
+requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-208. - Review cadence:
+every 9 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 9 OF 16 Incident Reporting and Escalation
+
+This policy establishes consistent operating expectations for incident
+reporting and escalation across Cedarline Technologies Pvt. Ltd.. It
+applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied. Managers are responsible for explaining the
+requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently. Records created under this
+policy must be accurate, complete, and stored in an approved repository.
+Access should be limited to personnel who need the information for an
+authorized purpose. Retention periods are determined by the records
+schedule and applicable legal obligations. Employees must not move
+restricted records to personal accounts, unmanaged devices, or
+unapproved collaboration services.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-209. - Review cadence:
+every 12 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 10 OF 16 Vendor and Third-Party Management
+
+Managers are responsible for explaining the requirements to their teams,
+confirming that relevant training is completed, and retaining evidence
+of required approvals. Employees must follow the published process and
+report suspected non-compliance without delay. The policy owner reviews
+operational feedback and may issue clarifications where recurring
+questions indicate that a requirement is unclear or difficult to apply
+consistently. Records created under this policy must be accurate,
+complete, and stored in an approved repository. Access should be limited
+to personnel who need the information for an authorized purpose.
+Retention periods are determined by the records schedule and applicable
+legal obligations. Employees must not move restricted records to
+personal accounts, unmanaged devices, or unapproved collaboration
+services. Exceptions require a documented business reason, a named
+accountable owner, an assessment of risk, and an expiry or review date.
+Approval must be obtained before the exception is implemented, except
+where an emergency process expressly permits temporary action. The
+policy owner maintains an exception register and reviews open exceptions
+at least quarterly.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-210. - Review cadence:
+every 6 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 11 OF 16 Travel, Expenses and Procurement
+
+Records created under this policy must be accurate, complete, and stored
+in an approved repository. Access should be limited to personnel who
+need the information for an authorized purpose. Retention periods are
+determined by the records schedule and applicable legal obligations.
+Employees must not move restricted records to personal accounts,
+unmanaged devices, or unapproved collaboration services. Exceptions
+require a documented business reason, a named accountable owner, an
+assessment of risk, and an expiry or review date. Approval must be
+obtained before the exception is implemented, except where an emergency
+process expressly permits temporary action. The policy owner maintains
+an exception register and reviews open exceptions at least quarterly.
+This policy establishes consistent operating expectations for travel,
+expenses and procurement across Cedarline Technologies Pvt. Ltd.. It
+applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-211. - Review cadence:
+every 9 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 12 OF 16 Health, Safety and Workplace Security
+
+Exceptions require a documented business reason, a named accountable
+owner, an assessment of risk, and an expiry or review date. Approval
+must be obtained before the exception is implemented, except where an
+emergency process expressly permits temporary action. The policy owner
+maintains an exception register and reviews open exceptions at least
+quarterly. This policy establishes consistent operating expectations for
+health, safety and workplace security across Cedarline Technologies Pvt.
+Ltd.. It applies to employees, temporary staff, and approved contractors
+when they use company facilities, systems, or information. A business
+unit may publish a local procedure to explain implementation details,
+but a local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied. Managers are responsible for explaining the
+requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-212. - Review cadence:
+every 12 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 13 OF 16 Training, Awareness and Acknowledgement
+
+This policy establishes consistent operating expectations for training,
+awareness and acknowledgement across Cedarline Technologies Pvt. Ltd..
+It applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied. Managers are responsible for explaining the
+requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently. Records created under this
+policy must be accurate, complete, and stored in an approved repository.
+Access should be limited to personnel who need the information for an
+authorized purpose. Retention periods are determined by the records
+schedule and applicable legal obligations. Employees must not move
+restricted records to personal accounts, unmanaged devices, or
+unapproved collaboration services.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-213. - Review cadence:
+every 6 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 14 OF 16 Exceptions and Risk Acceptance
+
+Managers are responsible for explaining the requirements to their teams,
+confirming that relevant training is completed, and retaining evidence
+of required approvals. Employees must follow the published process and
+report suspected non-compliance without delay. The policy owner reviews
+operational feedback and may issue clarifications where recurring
+questions indicate that a requirement is unclear or difficult to apply
+consistently. Records created under this policy must be accurate,
+complete, and stored in an approved repository. Access should be limited
+to personnel who need the information for an authorized purpose.
+Retention periods are determined by the records schedule and applicable
+legal obligations. Employees must not move restricted records to
+personal accounts, unmanaged devices, or unapproved collaboration
+services. Exceptions require a documented business reason, a named
+accountable owner, an assessment of risk, and an expiry or review date.
+Approval must be obtained before the exception is implemented, except
+where an emergency process expressly permits temporary action. The
+policy owner maintains an exception register and reviews open exceptions
+at least quarterly.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-214. - Review cadence:
+every 9 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 15 OF 16 Monitoring, Audit and Evidence
+
+Records created under this policy must be accurate, complete, and stored
+in an approved repository. Access should be limited to personnel who
+need the information for an authorized purpose. Retention periods are
+determined by the records schedule and applicable legal obligations.
+Employees must not move restricted records to personal accounts,
+unmanaged devices, or unapproved collaboration services. Exceptions
+require a documented business reason, a named accountable owner, an
+assessment of risk, and an expiry or review date. Approval must be
+obtained before the exception is implemented, except where an emergency
+process expressly permits temporary action. The policy owner maintains
+an exception register and reviews open exceptions at least quarterly.
+This policy establishes consistent operating expectations for
+monitoring, audit and evidence across Cedarline Technologies Pvt. Ltd..
+It applies to employees, temporary staff, and approved contractors when
+they use company facilities, systems, or information. A business unit
+may publish a local procedure to explain implementation details, but a
+local procedure cannot reduce a control required by this policy.
+Questions about scope should be raised with the policy owner before an
+exception is applied.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-215. - Review cadence:
+every 12 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.
+
+——————————– PAGE BREAK ——————————–
+
+PAGE 16 OF 16 Policy Review, Versioning and Enforcement
+
+Exceptions require a documented business reason, a named accountable
+owner, an assessment of risk, and an expiry or review date. Approval
+must be obtained before the exception is implemented, except where an
+emergency process expressly permits temporary action. The policy owner
+maintains an exception register and reviews open exceptions at least
+quarterly. This policy establishes consistent operating expectations for
+policy review, versioning and enforcement across Cedarline Technologies
+Pvt. Ltd.. It applies to employees, temporary staff, and approved
+contractors when they use company facilities, systems, or information. A
+business unit may publish a local procedure to explain implementation
+details, but a local procedure cannot reduce a control required by this
+policy. Questions about scope should be raised with the policy owner
+before an exception is applied. Managers are responsible for explaining
+the requirements to their teams, confirming that relevant training is
+completed, and retaining evidence of required approvals. Employees must
+follow the published process and report suspected non-compliance without
+delay. The policy owner reviews operational feedback and may issue
+clarifications where recurring questions indicate that a requirement is
+unclear or difficult to apply consistently.
+
+IMPLEMENTATION NOTES AND EXAMPLE VALUES - Policy owner: Nisha Kulkarni,
+People and Operations. Control reference: POL-03-216. - Review cadence:
+every 6 months. Evidence is retained in the controlled policy
+repository. - A manager should acknowledge a standard request within two
+business days; urgent security incidents use the incident hotline. - The
+policy applies to managed laptops, approved mobile devices, company
+identities, and approved cloud workspaces.
+
+REVIEW CHECKLIST - Confirm that the requirement is applicable to the
+selected deployment or employment arrangement. - Record the accountable
+owner and the evidence needed to demonstrate completion. - Check
+dependencies, exceptions, and interactions with adjacent sections. -
+Escalate ambiguity before applying a control or changing a production
+configuration.

@@ -146,9 +146,18 @@ class DocumentListItem(BaseModel):
 
 class SearchRequest(BaseModel):
     query: str
-    document_id: str | None = None
-    document_type: str | None = None
-    top_k: int | None = None
+    document_id: str | None = Field(
+        default=None,
+        description="Optional document id filter.",
+    )
+    document_type: str | None = Field(
+        default=None,
+        description="Optional document type filter.",
+    )
+    top_k: int | None = Field(
+        default=None,
+        description="Optional result count.",
+    )
 
 
 class SearchHit(BaseModel):
@@ -167,8 +176,14 @@ class SearchResponse(BaseModel):
 
 class AskRequest(BaseModel):
     query: str
-    document_id: str | None = None
-    document_type: str | None = None
+    document_id: str | None = Field(
+        default=None,
+        description="Optional document id filter.",
+    )
+    document_type: str | None = Field(
+        default=None,
+        description="Optional document type filter.",
+    )
 
 
 class AskResponse(BaseModel):
