@@ -17,6 +17,7 @@ Document types:
 - Company Policy
 - Product Documentation
 - Project Proposal
+- Other (if it does not match the types above)
 
 ## Stack
 
@@ -46,13 +47,23 @@ uvicorn app.main:app --reload
 
 Swagger: http://127.0.0.1:8000/docs
 
+## Tests
+
+From the project root:
+
+```powershell
+pytest tests/test_config.py -v
+pytest tests/test_schemas.py -v
+pytest tests/test_parser.py -v
+pytest tests -v
+```
+
+More detail: [tests/README.md](tests/README.md)
+
 ## Current status
 
-Done:
+Done: config, schemas, parser, and tests for those files.
 
-- `requirements.txt`, `.env.example`, `.gitignore`
-- `app/config.py` (loads `.env`)
-
-Next: schemas, parser, extraction, search, API, tests.
+Next: storage, NVIDIA client, extraction, search, API.
 
 Config knobs (`CHUNK_SIZE`, `PAGES_PER_BATCH`, etc.) live in `.env`.
